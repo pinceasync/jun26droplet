@@ -351,6 +351,11 @@ body.legal-view-terms main > section:not(#terms) {
         const selected = tab.textContent.trim() === demos[key].label;
         tab.setAttribute('aria-selected', String(selected));
         tab.tabIndex = selected ? 0 : -1;
+        if (selected) {
+          tab.style.cssText = 'background-color:var(--color-primary);color:white;box-shadow:0 6px 18px rgba(223,91,63,0.18)';
+        } else {
+          tab.style.cssText = 'background-color:transparent;color:var(--color-text-secondary);box-shadow:none';
+        }
       });
       if (play) {
         play.setAttribute('aria-label', 'Play ' + demos[key].label + ' demo');
